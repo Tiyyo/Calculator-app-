@@ -4,37 +4,54 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    background-color: $main-background;
 
     &__header  {
         display: flex;
+        color: $white;
+
 
     }
     &__result  {
+        padding: 20px 25px;
+        text-align: right;
         border: 1px solid black;
+        border-radius: 6px;
+        color: $white;
+        background-color: $screen-background;
         height: 100px;
         width: 100%;
         font-size: 4.5rem;
 
+
     }
     &__body  {
+        padding: 30px;
         border: 1px solid black;
+        background-color: $toggle-background ;
         width: 100%;
         display: grid;
         align-content: space-evenly;
         place-items: center;
+        gap: 10px;
        
 
 
 
         &__keys{
-            color : black;
+            color : $text-blue;
+            background-color: $key-orange-background;
             font-size: 2.5rem;
-            height: 100px;
+            height: 50px;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 6px;
+            @extend %centerFlex;
+
         }
     
         .key--1  {
             grid-area: 3/1/4/2;
-            border: 1px solid black;
             place-items: center;
 
         }
@@ -83,12 +100,35 @@
     
         &__delete  {
             grid-area: 1/4/2/5;
+            color : $white;
+            background-color: $keys-background;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+            height: 50px;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 6px;
+            @extend %centerFlex;
         }
         &__reset  {
             grid-area: 5/1/6/3;
+            color : black;
+            font-size: 2.5rem;
+            height: 50px;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 6px;
+            @extend %centerFlex;
         }
         &__calc  {
             grid-area:5/3/6/5 ;
+            color : black;
+            font-size: 2.5rem;
+            height: 50px;
+            width: 100%;
+            border: 1px solid black;
+            border-radius: 6px;
+            @extend %centerFlex;
         }
     }
 }

@@ -1,9 +1,16 @@
+.container__body__calc, .container__body__reset, .container__body__delete, .container__body__keys {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  background-color: hsl(222deg, 26%, 31%);
 }
 
 *, *:before, *:after {
@@ -50,42 +57,50 @@ table {
   border-spacing: 0;
 }
 
-input {
-  -webkit-appearance: none;
-  border-radius: 0;
-}
-
 .container {
   width: 75%;
   max-width: 450px;
   display: flex;
   flex-direction: column;
   row-gap: 15px;
+  background-color: hsl(222deg, 26%, 31%);
 }
 .container__header {
   display: flex;
+  color: hsl(0deg, 0%, 100%);
 }
 .container__result {
+  padding: 20px 25px;
+  text-align: right;
   border: 1px solid black;
+  border-radius: 6px;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(224deg, 36%, 15%);
   height: 100px;
   width: 100%;
   font-size: 4.5rem;
 }
 .container__body {
+  padding: 30px;
   border: 1px solid black;
+  background-color: hsl(223deg, 31%, 20%);
   width: 100%;
   display: grid;
   align-content: space-evenly;
   place-items: center;
+  gap: 10px;
 }
 .container__body__keys {
-  color: black;
+  color: hsl(221deg, 14%, 31%);
+  background-color: hsl(30deg, 25%, 89%);
   font-size: 2.5rem;
-  height: 100px;
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
 }
 .container__body .key--1 {
   grid-area: 3/1/4/2;
-  border: 1px solid black;
   place-items: center;
 }
 .container__body .key--2 {
@@ -132,10 +147,30 @@ input {
 }
 .container__body__delete {
   grid-area: 1/4/2/5;
+  color: hsl(0deg, 0%, 100%);
+  background-color: hsl(225deg, 21%, 49%);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
 }
 .container__body__reset {
   grid-area: 5/1/6/3;
+  color: black;
+  font-size: 2.5rem;
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
 }
 .container__body__calc {
   grid-area: 5/3/6/5;
+  color: black;
+  font-size: 2.5rem;
+  height: 50px;
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 6px;
 }/*# sourceMappingURL=main.css.map */
