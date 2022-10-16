@@ -17,3 +17,11 @@
             + 'Please make sure it is defined in `$breakpoints` map.';
     }
 }
+
+@mixin specialKeys  {
+    @extend %centerFlex;
+    border-radius: 6px;
+    width: 100% ;
+    height: 55px;
+    text-transform: uppercase;
+}

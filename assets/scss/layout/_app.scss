@@ -1,59 +1,53 @@
+
 .container  {
-    width: 75%;
+    background-color: var(--main-background);
+    font-family: 'League Spartan', sans-serif;
+    padding: 25px 0;
+    width: 85%;
     max-width: 450px;
     display: flex;
     flex-direction: column;
     row-gap: 15px;
-    background-color: $main-background;
+    // background-color: --main-background;
 
     &__header  {
         display: flex;
-        color: $white;
-
-
+        & > h1 {
+            font-size: 1.8rem;
+        }
     }
     &__result  {
-        padding: 20px 25px;
-        text-align: right;
-        border: 1px solid black;
-        border-radius: 6px;
-        color: $white;
-        background-color: $screen-background;
-        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0 25px;
+        background-color: var(--screen-background);
+        border-radius: 12px;
+        height: 95px;
         width: 100%;
-        font-size: 4.5rem;
-
-
+        font-size: 2.2rem;
+        margin-bottom: 10px;
     }
     &__body  {
-        padding: 30px;
-        border: 1px solid black;
-        background-color: $toggle-background ;
+        padding: 20px;
+        border-radius: 12px;
+        background-color: var(--toggle-background_keypad-background);
         width: 100%;
         display: grid;
         align-content: space-evenly;
         place-items: center;
-        gap: 10px;
+        gap: 15px;
        
-
-
-
         &__keys{
-            color : $text-blue;
-            background-color: $key-orange-background;
-            font-size: 2.5rem;
-            height: 50px;
-            width: 100%;
-            border: 1px solid black;
-            border-radius: 6px;
-            @extend %centerFlex;
-
+            @include specialKeys ;
+            color: var(--text-keys);
+            background-color: var(--keys-background);
+            font-size: 1.7rem;
+            box-shadow:0px 4px 0px 0px var(--keys-shadow);
         }
     
         .key--1  {
             grid-area: 3/1/4/2;
-            place-items: center;
-
         }
         .key--2  {
             grid-area: 3/2/4/3;
@@ -89,10 +83,10 @@
             grid-area: 3/4/4/5;
         }
         .key--div  {
-            grid-area: 4/3/5/4;
+            grid-area: 4/4/5/5;
         }
         .key--mult  {
-            grid-area: 4/4/5/5;
+            grid-area: 4/3/4/5;
         }
         .key--dot  {
             grid-area: 4/1/5/2;
@@ -100,36 +94,88 @@
     
         &__delete  {
             grid-area: 1/4/2/5;
-            color : $white;
-            background-color: $keys-background;
-            text-transform: uppercase;
-            font-size: 1.5rem;
-            height: 50px;
-            width: 100%;
-            border: 1px solid black;
-            border-radius: 6px;
-            @extend %centerFlex;
+            @include specialKeys ;
+            color: var(--white-text);
+            background-color: var(--key-del-background);
+            box-shadow:0px 4px 0px 0px var(--key-del-shadow);
+            font-size: 1.3rem;
         }
         &__reset  {
-            grid-area: 5/1/6/3;
-            color : black;
-            font-size: 2.5rem;
-            height: 50px;
-            width: 100%;
-            border: 1px solid black;
-            border-radius: 6px;
-            @extend %centerFlex;
+            grid-area: 5/1/6/3; 
+            @include specialKeys;
+            font-size: 1.2rem;
+            background-color: var(--key-del-background);
+            color: var(--white-text);
+            box-shadow:0px 4px 0px 0px var(--key-del-shadow);
         }
         &__calc  {
             grid-area:5/3/6/5 ;
-            color : black;
-            font-size: 2.5rem;
-            height: 50px;
-            width: 100%;
-            border: 1px solid black;
-            border-radius: 6px;
-            @extend %centerFlex;
+            @include specialKeys;
+            background-color: var(--key-calc-background_toggle);
+            color: var(--white-text);
+            font-size: 1.2rem;
+            box-shadow: 0px 4px 0px 0px var(--key-calc-shadow);
         }
+    }
+}
+
+.header  { 
+    display: flex;
+    justify-content: space-between;
+
+    &__switch  {
+        display: flex;
+        flex-direction: column;
+        row-gap: 5px;
+        &__title  {
+            display: flex;
+            justify-content: space-evenly;
+            
+        }
+        &__buttons  {
+            position: relative;
+            display: flex;
+            justify-content: space-evenly;
+            height: 20px;
+            width: 75px;
+            border-radius: 18px;
+            background-color: var(--toggle-background_keypad-background);
+
+            &::after  {
+                content: "THEME";
+                position: absolute;
+                left: -75px;
+                font-size: 0.8rem;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .round-slider  {
+                    position: absolute;
+                    z-index: 0;
+                    border-radius: 50%;
+                    background-color: var(--key-calc-background_toggle);
+                    width: 15px;
+                    height: 15px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 8px;
+                    transition: left 0.5s;
+                    
+                }
+            }
+    }
+}
+
+button {
+    font-family: 'League Spartan', sans-serif;
+    z-index: 10;
+    border: 0;
+    background-color: transparent;
+    font-weight: 700;
+
+    &:hover  {
+        cursor: pointer;
     }
 }
 

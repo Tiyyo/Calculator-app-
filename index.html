@@ -13,41 +13,30 @@
     />
 
     <title>Frontend Mentor | Calculator app</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./assets/scss/main.css" />
     <script src="app.js" defer></script>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   </head>
-  <body>
+  <body class="body" data-theme>
     <div class="container">
       <div class="container__header header">
         <h1>calc</h1>
         <div class="header__switch">
           <div class="header__switch__title">
-            <p>1</p>
-            <p>2</p>
-            <p>3</p>
+            <button class="checkbox-theme-1 checkbox" data-theme="1">1</button>
+            <button class="checkbox-theme-2 checkbox" data-theme="2">2</button>
+            <button class="checkbox-theme-3 checkbox" data-theme="3">3</button>
           </div>
-          <div class="header__switch__buttons buttons">
-            <input
-              type="radio"
-              name="toggle"
-              class="buttons__btn"
-              id="theme1"
-            />
-            <input
-              type="radio"
-              name="toggle"
-              class="buttons__btn"
-              id="theme2"
-            />
-            <input
-              type="radio"
-              name="toggle"
-              class="buttons__btn"
-              id="theme3"
-            />
+          <div class="header__switch__buttons">
+            <span class="round-slider"></span>
           </div>
         </div>
       </div>
@@ -74,11 +63,11 @@
       </div>
     </div>
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="#">Your Name Here</a>.
-    </div>
+    </div> -->
   </body>
 </html>
