@@ -21,7 +21,7 @@ html  {
     font-family: 'League Spartan', sans-serif;
     background-color: var(--main-background);
     transition: 0.7s;
-
+    
     &[data-theme='1']  {
       --main-background : hsl(222, 26%, 31%);
       --toggle-background_keypad-background: hsl(223, 31%, 20%);
